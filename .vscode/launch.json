@@ -4,17 +4,14 @@
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
+        
         {
             "type": "node",
             "request": "launch",
-            "name": "启动程序",
-            "program": "/Users/yaoxiaoyu/learngit/collection-calculate-camp/practices/collectionOperator/collect_all_even.js",
-            //"program": "${workspaceFolder}/practices/collectionOperator/collect_all_even.js",
-            //"program": "/Users/yaoxiaoyu/learngit/collection-calculate-camp/specs/collectionOperator/collect_all_even_spec.js",
-            //"args": [
-            //    "[1, 2, 3, 4, 5]"
-            //]
-        }
+            "name": "js Program",
+            "program": "/Users/yaoxiaoyu/learngit/collection-calculate-camp/practices/section_2/practice_1/practice"
+        },
+    
+
     ]
 }
