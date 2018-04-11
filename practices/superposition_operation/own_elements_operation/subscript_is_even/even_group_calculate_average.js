@@ -8,8 +8,6 @@ var even_group_calculate_average = function(collection){
         }
     }
 
-    console.log(odd_index_collection);
-
     //找出A中的偶数元素组成的数组B,若A中没有偶数元素，返回[0]
     var even_number_odd_index_collection = [];
     var count = 0;
@@ -22,7 +20,7 @@ var even_group_calculate_average = function(collection){
             even_number_odd_index_collection.push(0);
         }
     }
-    console.log(even_number_odd_index_collection)
+    even_number_odd_index_collection.sort(function(a,b){return a-b});
 
 
     //计算B中每个元素的位数，并组成对象C，格式{123:3, 456:3, 78:2}
@@ -35,8 +33,6 @@ var even_group_calculate_average = function(collection){
         }
         count_of_number[even_number_odd_index_collection[i]] = count;
     }
-
-    console.log(count_of_number)
 
     //将B中的每个元素按照数字位数分组,相同位数放到一个小集合，再把小集放到同一个大的集合D
     var newArr = [],
@@ -51,28 +47,20 @@ var even_group_calculate_average = function(collection){
             tempArr.length = 0;
         }
     }
-
-    console.log(newArr)
     
     //计算集合D中，每个由相同元素组成的小集合中元素的平均数，并把这些平均数组成集合E
     var result_collection = [];
     for(var i in newArr){
         var sum = 0;
-        for(var j in newArr[j]){
+        for(var j in newArr[i]){
             sum = sum + newArr[i][j];
             var avg = sum / newArr[i].length;
         }
         result_collection.push(avg);  
     }
-    console.log(result_collection)
 
     return result_collection;
 
 };
 
-var collection_a = [1, 2, 3, 4, 5, 6, 12, 454, 324, 21, 45, 644, 34, 56, 345, 570, 8, 4, 14];
-var collection_b = [1, 3, 5, 7, 33, 55, 31, 555, 777];
-var collection_c = [344, 256, 55, 777, 322, 180];
-even_group_calculate_average (collection_a);
-
-//module.exports = even_group_calculate_average;
+module.exports = even_group_calculate_average;
